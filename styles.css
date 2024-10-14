@@ -1,0 +1,81 @@
+body {
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #f0f0f0; /* Color de fondo opcional */  
+  }
+a:visited {
+    color: black;
+  }/*deja el color de los links visitadeos en azul*/
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+  ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    width: 300px; /* El <ul> ocupa todo el ancho del contenedor padre */
+    max-width: 600px; /* Define un ancho máximo opcional */
+    margin: 0 auto; /* Centra el <ul> horizontalmente */
+    padding: 0;
+    text-align: center; /* Centra los <li> horizontalmente */
+  }
+  
+  
+  /* Estilo de los <li> para que los botones ocupen todo el ancho disponible */
+  li {
+    height: 65px;
+    width: 300px; /* Ancho específico para cada <li> */
+    margin: 10px auto; /* Espacio entre los <li> y centrado automático */
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 20px;
+    width: 80%; /* Ajusta el ancho según sea necesario */
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+
+
+h1 {
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 20px; /* Espacio entre la tabla y el formulario */
+  width: 80%; /* Ajusta el ancho según sea necesario */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+form {
+  width: 80%; /* Asegúrate de que el formulario tenga el mismo ancho que la tabla */
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columna */
+  gap: 10px; /* Espacio entre los elementos del formulario */
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  width: 200px; /* Ancho fijo para el botón */
+  align-self: flex-start; /* Alinea el botón al inicio del formulario */
+}
