@@ -9,4 +9,4 @@ entrar a la aplicacion en: http://localhost/ej1crud/
 la otra opcion es importar la BD adjuntada adentro del proyecto (archivo tienda.SQL)
 
 
-Programa realizado con fines educativos por Profesor Mauro Bobyk.
+Programa realizado con fines educativos por Profesor Mauro Andres Bobyk.
