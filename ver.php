@@ -16,7 +16,11 @@ $productos = $stmt->fetchAll();
         <th>Unidades Disponibles</th>
         <th>Acciones</th>
     </tr>
-    <?php foreach ($productos as $producto): ?>
+    <?php foreach ($productos as $producto): 
+        /* foreach es una estructura de control en PHP que se utiliza para 
+iterar sobre arrays y objetos. 
+Es especialmente útil cuando quieres recorrer todos los elementos de un array sin tener que preocuparte por los índices*/
+        ?>
     <tr>
         <td><?= $producto['id'] ?></td>
         <td><?= $producto['articulo'] ?></td>
