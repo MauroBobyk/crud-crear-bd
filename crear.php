@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descripcion = $_POST['descripcion'];
     $unidades = $_POST['unidades_disponibles'];
 
-    $consulta = $conexionbd->prepare("INSERT INTO productos (articulo, descripcion, unidades_disponibles) VALUES (?, ?, ?)");
+    $consulta = $conexionbd->prepare("INSERT INTO productos (articulo, descripcion, unidades_disponibles) VALUES (?, ?, ?)");/*los ? es debido a evitar inyeccion SQL y ademas le pasamos parametros */
     $consulta->execute([$articulo, $descripcion, $unidades]);
 
     echo "Producto creado con éxito.";
