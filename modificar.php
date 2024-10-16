@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $unidades = $_POST['unidades_disponibles'];
 
         $consulta = $conexionbd->prepare("UPDATE productos SET articulo = ?, descripcion = ?, unidades_disponibles = ? WHERE id = ?");
-        $consulta->execute([$articulo, $descripcion, $unidades, $id]);
+        $consulta->execute([$articulo, $descripcion, $unidades, $id]); /*Se ejecuta la consulta SQL que en este caso es Uodate para actualizar los datos*/
 
         echo "Producto actualizado con éxito.";
         header("Location: ver.php");
