@@ -3,8 +3,8 @@ include 'conexion.php';
 include 'index.php';
 
 // Obtener todos los productos
-$stmt = $pdo->query("SELECT * FROM productos");
-$productos = $stmt->fetchAll();
+$consulta = $conexionbd->query("SELECT * FROM productos");/*esta es la consulta SQL */
+$productos = $consulta->fetchAll();/*  devuelve un array con todas las filas resultantes de la consulta*/
 ?>
 <head> <link href="styles.css" rel="stylesheet" type="text/css"> </head>
 <h1>Lista de Productos</h1>

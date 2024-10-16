@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descripcion = $_POST['descripcion'];
     $unidades = $_POST['unidades_disponibles'];
 
-    $stmt = $pdo->prepare("INSERT INTO productos (articulo, descripcion, unidades_disponibles) VALUES (?, ?, ?)");
-    $stmt->execute([$articulo, $descripcion, $unidades]);
+    $consulta = $conexionbd->prepare("INSERT INTO productos (articulo, descripcion, unidades_disponibles) VALUES (?, ?, ?)");
+    $consulta->execute([$articulo, $descripcion, $unidades]);
 
     echo "Producto creado con éxito.";
 }

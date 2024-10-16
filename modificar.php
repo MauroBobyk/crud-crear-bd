@@ -4,9 +4,9 @@ include 'index.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id = $_POST['id'];
-    $stmt = $pdo->prepare("SELECT * FROM productos WHERE id = ?");
-    $stmt->execute([$id]);
-    $producto = $stmt->fetch();
+    $consulta = $conexionbd->prepare("SELECT * FROM productos WHERE id = ?");
+    $consulta->execute([$id]);
+    $producto = $consulta->fetch();/* dentro de la variable PRODUCTO va a ir todos los datos para la BD*/
 
     if (!$producto) {
         echo "Producto no encontrado.";
@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $descripcion = $_POST['descripcion'];
         $unidades = $_POST['unidades_disponibles'];
 
-        $stmt = $pdo->prepare("UPDATE productos SET articulo = ?, descripcion = ?, unidades_disponibles = ? WHERE id = ?");
-        $stmt->execute([$articulo, $descripcion, $unidades, $id]);
+        $consulta = $conexionbd->prepare("UPDATE productos SET articulo = ?, descripcion = ?, unidades_disponibles = ? WHERE id = ?");
+        $consulta->execute([$articulo, $descripcion, $unidades, $id]);
 
         echo "Producto actualizado con éxito.";
         header("Location: ver.php");
@@ -27,9 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 } else {
     $id = $_GET['id'];
-    $stmt = $pdo->prepare("SELECT * FROM productos WHERE id = ?");
-    $stmt->execute([$id]);
-    $producto = $stmt->fetch();
+    $consulta = $conexionbd->prepare("SELECT * FROM productos WHERE id = ?");
+    $consulta->execute([$id]);
+    $producto = $consulta->fetch();
 }
 ?>
 
