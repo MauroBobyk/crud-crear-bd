@@ -10,6 +10,11 @@ $consulta = $conexionbd->query("SELECT * FROM productos");
 
 // Obtener todos los resultados de la consulta como array asociativo
 $productos = $consulta->fetchAll();
+/*devuelve un array con todas las filas resultantes de la consulta
+- fetchAll() recupera todas las filas del resultado de la consulta
+- Convierte el resultado en un array asociativo
+- Cada elemento del array representa un producto con sus datos
+*/
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,6 +40,11 @@ $productos = $consulta->fetchAll();
         <?php 
         // Iniciar bucle para recorrer cada producto en el array
         foreach ($productos as $producto): 
+               /* 
+        foreach recorre cada elemento del array $productos
+        En cada iteración, $producto contiene los datos de un producto
+        */
+        ?>
         ?>
         <!-- Fila de tabla para cada producto -->
         <tr>
