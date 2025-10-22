@@ -1,41 +1,79 @@
 <?php
+// Incluir archivo de conexión a la base de datos
 include 'conexion.php';
+
+// Incluir archivo principal (probablemente con configuraciones o cabecera)
 include 'index.php';
 
-// Obtener todos los productos
-$consulta = $conexionbd->query("SELECT * FROM productos");/*esta es la consulta SQL */
-$productos = $consulta->fetchAll();/*  devuelve un array con todas las filas resultantes de la consulta*/
+// Consulta SQL para obtener todos los productos de la tabla
+$consulta = $conexionbd->query("SELECT * FROM productos");
+
+// Obtener todos los resultados de la consulta como array asociativo
+$productos = $consulta->fetchAll();
 ?>
-<head> <link href="styles.css" rel="stylesheet" type="text/css"> </head>
-<h1>Lista de Productos</h1>
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Artículo</th>
-        <th>Descripción</th>
-        <th>Unidades Disponibles</th>
-        <th>Acciones</th>
-    </tr>
-    <?php foreach ($productos as $producto): 
-        /* foreach es una estructura de control en PHP que se utiliza para 
-iterar sobre arrays y objetos. 
-Es para recorrer todos los elementos de un array sin tener que preocuparte por los índices*/
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Enlazar hoja de estilos CSS para el diseño -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!-- Título principal de la página -->
+    <h1>Lista de Productos</h1>
+    
+    <!-- Tabla para mostrar los productos -->
+    <table border="1">
+        <!-- Fila de encabezados de la tabla -->
+        <tr>
+            <th>ID</th>                    <!-- Encabezado columna ID -->
+            <th>Artículo</th>              <!-- Encabezado columna nombre del artículo -->
+            <th>Descripción</th>           <!-- Encabezado columna descripción -->
+            <th>Unidades Disponibles</th>  <!-- Encabezado columna stock disponible -->
+            <th>Acciones</th>              <!-- Encabezado columna para botones de acciones -->
+        </tr>
+        
+        <?php 
+        // Iniciar bucle para recorrer cada producto en el array
+        foreach ($productos as $producto): 
         ?>
-    <tr>
-        <td><?= $producto['id'] ?></td>
-        <td><?= $producto['articulo'] ?></td>
-        <td><?= $producto['descripcion'] ?></td>
-        <td><?= $producto['unidades_disponibles'] ?></td>
-        <td>
-            <form method="POST" action="eliminar.php" style="display:inline;">
-                <input type="hidden" name="id" value="<?= $producto['id'] ?>">
-                <button type="submit" class="btn btn-danger">Eliminar</button>
-            </form>
-            <form method="POST" action="modificar.php" style="display:inline;">
-                <input type="hidden" name="id" value="<?= $producto['id'] ?>">
-                <button type="submit" class="btn btn-warning">Modificar</button>
-            </form>
-        </td>
-    </tr>
-    <?php endforeach; ?>
-</table>
+        <!-- Fila de tabla para cada producto -->
+        <tr>
+            <!-- Celda con el ID del producto -->
+            <td><?= $producto['id'] ?></td>
+            
+            <!-- Celda con el nombre del artículo -->
+            <td><?= $producto['articulo'] ?></td>
+            
+            <!-- Celda con la descripción del producto -->
+            <td><?= $producto['descripcion'] ?></td>
+            
+            <!-- Celda con las unidades disponibles en stock -->
+            <td><?= $producto['unidades_disponibles'] ?></td>
+            
+            <!-- Celda que contiene los botones de acciones -->
+            <td>
+                <!-- Formulario para eliminar producto (estilo en línea) -->
+                <form method="POST" action="eliminar.php" style="display:inline;">
+                    <!-- Campo oculto que envía el ID del producto a eliminar -->
+                    <input type="hidden" name="id" value="<?= $producto['id'] ?>">
+                    <!-- Botón para enviar formulario de eliminación -->
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
+                
+                <!-- Formulario para modificar producto (estilo en línea) -->
+                <form method="POST" action="modificar.php" style="display:inline;">
+                    <!-- Campo oculto que envía el ID del producto a modificar -->
+                    <input type="hidden" name="id" value="<?= $producto['id'] ?>">
+                    <!-- Botón para enviar formulario de modificación -->
+                    <button type="submit" class="btn btn-warning">Modificar</button>
+                </form>
+            </td>
+        </tr>
+        <?php 
+        // Finalizar el bucle foreach
+        endforeach; 
+        ?>
+    </table>
+    <!-- Cierre de la tabla -->
+</body>
+</html>
