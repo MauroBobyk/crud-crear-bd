@@ -1,81 +1,112 @@
+/*
+  Estilos generales del proyecto.
+  Definen el fondo, la tipografía y el centrado de los contenedores principales.
+*/
 body {
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    background-color: #f0f0f0; /* Color de fondo opcional */  
-  }
-a:visited {
-    color: black;
-  }/*deja el color de los links visitadeos en azul*/
+    margin: 0;
+    background: linear-gradient(135deg, #f5f7ff 0%, #eef3ff 100%);
+    font-family: Arial, sans-serif;
+}
 
+/*
+  Clase utilizada para centrar la vista principal en la pantalla.
+*/
+.page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*
+  Limita el ancho de los contenedores para que la interfaz se vea ordenada.
+*/
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/*
+  Estilo del título principal de cada pantalla.
+*/
+h1 {
+    color: #1f2937;
+    font-weight: 700;
+}
+
+/*
+  Estilo del menú principal con los botones de navegación.
+*/
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+/*
+  Configuración del formulario para que los campos se vean en columna.
+*/
+.form-style {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-style label {
+    font-weight: 600;
+    color: #374151;
+}
+
+/*
+  Estilo visual de los inputs de texto y los textarea.
+*/
+.form-style input,
+.form-style textarea {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-style textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/*
+  Ajuste para que la tabla quede bien alineada en la vista de listado.
+*/
+.table {
+    margin-bottom: 0;
+}
+
+/*
+  Redondeo uniforme para los botones.
+*/
+.btn {
+    border-radius: 8px;
+}
+
+/*
+  Margen estándar para los mensajes de alerta.
+*/
+.alert {
+    margin-bottom: 1.5rem;
+}
+
+/*
+  Quita el subrayado por defecto de los enlaces.
+*/
 a {
     text-decoration: none;
-    color: black;
-  }
-
-
-  ul {
-    list-style: none; /* Elimina los puntos de la lista */
-    width: 300px; /* El <ul> ocupa todo el ancho del contenedor padre */
-    max-width: 600px; /* Define un ancho máximo opcional */
-    margin: 0 auto; /* Centra el <ul> horizontalmente */
-    padding: 0;
-    text-align: center; /* Centra los <li> horizontalmente */
-  }
-  
-  
-  /* Estilo de los <li> para que los botones ocupen todo el ancho disponible */
-  li {
-    height: 65px;
-    width: 300px; /* Ancho específico para cada <li> */
-    margin: 10px auto; /* Espacio entre los <li> y centrado automático */
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: 20px;
-    width: 80%; /* Ajusta el ancho según sea necesario */
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-
-
-h1 {
-  margin-bottom: 20px; /* Espacio debajo del título */
-}
-
-table {
-  border-collapse: collapse;
-  margin-bottom: 20px; /* Espacio entre la tabla y el formulario */
-  width: 80%; /* Ajusta el ancho según sea necesario */
-}
-
-th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-th {
-  background-color: #f4f4f4;
-}
-
-form {
-  width: 80%; /* Asegúrate de que el formulario tenga el mismo ancho que la tabla */
-  display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
-  gap: 10px; /* Espacio entre los elementos del formulario */
-}
-
-label {
-  font-weight: bold;
-}
-
-button {
-  width: 200px; /* Ancho fijo para el botón */
-  align-self: flex-start; /* Alinea el botón al inicio del formulario */
+/*
+  Define una apariencia más moderna para las tarjetas que contienen contenido.
+*/
+.card {
+    border-radius: 18px;
 }
