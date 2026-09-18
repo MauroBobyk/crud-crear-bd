@@ -319,4 +319,6 @@ Desarrollo realizado para uso docente y de práctica en entornos locales con XAM
 ## Nota final
 
 La aplicación está diseñada para funcionar en XAMPP con MariaDB/MySQL en un entorno local. Su enfoque principal es la comprensión de conceptos básicos de bases de datos y programación web en un contexto práctico y accesible.
+⚖️ Licencia y Limitación de Responsabilidad Este proyecto está publicado bajo la licencia GNU General Public License v3.0 (GPL-3.0). Podés consultar los términos completos en el archivo LICENSE.
 
+¿Qué significa esto para las clases y proyectos? Libertad de uso: Sos libre de descargar, modificar, usar y distribuir este código para tus trabajos prácticos, proyectos personales o profesionales. Código abierto obligado: Si modificás este software y decidís compartirlo o publicarlo, estás obligado a hacerlo de forma pública y bajo esta misma licencia GPLv3. Sin garantías ("As Is"): El software se entrega tal cual está, con fines puramente educativos. No se ofrece ninguna garantía de funcionamiento. Exención de responsabilidad: El autor no se hace responsable por códigos que no compilen, fallas en el sistema, ni por cualquier daño físico o rotura de componentes de hardware (como placas Arduino, sensores o actuadores) derivados del uso de este programa. El uso corre por cuenta y riesgo del usuario.
